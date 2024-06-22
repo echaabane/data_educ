@@ -1,0 +1,22 @@
+echo effacement des fichiers csv
+rm *.csv
+echo effacement des fichiers xlsx
+rm *.xlsx
+echo 'telechargement Table de passage IPS PCS'
+curl -X GET 'https://data.education.gouv.fr/api/datasets/1.0/fr-en-ips-ecoles-ap2022/attachments/table_de_passage_ips_pcs_2022_xlsx/' >> Table-de-passage-IPS-PCS-2022.xlsx
+echo 'telechargement effectifs ecole'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-ecoles-effectifs-nb_classes/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-ecoles-effectifs-nb_classes.csv
+echo 'telechargement IPS ecoles'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-ips-ecoles-ap2022/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-ips-ecoles-ap2022.csv
+echo 'telechargement effectif college'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-college-effectifs-niveau-sexe-lv/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-college-effectifs-niveau-sexe-lv.csv
+echo 'telechargement valeur ajouté college'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-indicateurs-valeur-ajoutee-colleges/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B'>> fr-en-indicateurs-valeur-ajoutee-colleges.csv
+echo 'telechargement ips college'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-ips-colleges-ap2022/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-ips-colleges-ap2022.csv
+echo 'telechargement ips lycee'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-ips-lycees-ap2022/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-ips-lycees-ap2022.csv
+echo 'telechargement effectifs et resultats lycee general et technique'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-indicateurs-de-resultat-des-lycees-denseignement-general-et-technologique/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-indicateurs-de-resultat-des-lycees-denseignement-general-et-technologique.csv
+echo 'telechargement effectifs et resultats lycée pro'
+curl -X GET 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-indicateurs-de-resultat-des-lycees-denseignement-professionnels/exports/csv?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B' >> fr-en-indicateurs-de-resultat-des-lycees-denseignement-professionnels.csv
